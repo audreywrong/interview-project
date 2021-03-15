@@ -9,8 +9,9 @@
 </head>
 
 <body class="antialiased">
-    <div id="react-app"></div>
-    <script src="{{ asset('js/app.js') }}"></script>
+    <div id="react-app">
+        <script src="{{ asset('js/app.js') }}"></script>
+    </div>
 </body>
 
 </html>
