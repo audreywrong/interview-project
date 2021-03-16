@@ -5,7 +5,7 @@ import ReactDOM from "react-dom";
 class BandForm extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { bandName: "", single: "", image: "", audio: "" };
+        this.state = { name: "", single: "", image: "", audio: "" };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -21,8 +21,23 @@ class BandForm extends React.Component {
         event.preventDefault();
         const data = this.state;
         console.log(data);
-        const bandName = this.state.bandName;
+        const bandName = this.state.name;
         alert(`You submit a band profile for: ${bandName}.`);
+    }
+
+    componentDidMount() {
+        const url = "api/store/tile";
+
+        axios
+            .post(url, {
+                name: "",
+                single: "",
+                image: null,
+                audio: null,
+            })
+            .then(function (response) {
+                console.log(response);
+            });
     }
 
     render() {
@@ -32,10 +47,10 @@ class BandForm extends React.Component {
                     <label>
                         Band Name:
                         <input
-                            name="bandName"
+                            name="name"
                             placeholder="Band Name"
                             type="text"
-                            value={this.state.bandName}
+                            value={this.state.name}
                             onChange={this.handleChange}
                         />
                     </label>
@@ -75,7 +90,9 @@ class BandForm extends React.Component {
                     </label>
                 </div>
                 <div>
-                    <button>Save Favorite Band Profile</button>
+                    <button onClick={this.componentDidMount}>
+                        Save Favorite Band Profile
+                    </button>
                 </div>
             </form>
         );

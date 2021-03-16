@@ -1958,7 +1958,7 @@ var BandForm = /*#__PURE__*/function (_React$Component) {
 
     _this = _super.call(this, props);
     _this.state = {
-      bandName: "",
+      name: "",
       single: "",
       image: "",
       audio: ""
@@ -1981,8 +1981,21 @@ var BandForm = /*#__PURE__*/function (_React$Component) {
       event.preventDefault();
       var data = this.state;
       console.log(data);
-      var bandName = this.state.bandName;
+      var bandName = this.state.name;
       alert("You submit a band profile for: ".concat(bandName, "."));
+    }
+  }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var url = "api/store/tile";
+      axios.post(url, {
+        name: "",
+        single: "",
+        image: null,
+        audio: null
+      }).then(function (response) {
+        console.log(response);
+      });
     }
   }, {
     key: "render",
@@ -1992,10 +2005,10 @@ var BandForm = /*#__PURE__*/function (_React$Component) {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("label", {
             children: ["Band Name:", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
-              name: "bandName",
+              name: "name",
               placeholder: "Band Name",
               type: "text",
-              value: this.state.bandName,
+              value: this.state.name,
               onChange: this.handleChange
             })]
           })
@@ -2029,6 +2042,7 @@ var BandForm = /*#__PURE__*/function (_React$Component) {
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+            onClick: this.componentDidMount,
             children: "Save Favorite Band Profile"
           })
         })]
