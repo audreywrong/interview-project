@@ -58,6 +58,9 @@ function ButtonComponent() {
 
 export default ButtonComponent;
 
-if (document.getElementById("react-app")) {
-    ReactDOM.render(<ButtonComponent />, document.getElementById("react-app"));
+if (document.getElementById("sample-button")) {
+    ReactDOM.render(
+        <ButtonComponent />,
+        document.getElementById("sample-button")
+    );
 }

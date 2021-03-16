@@ -9,9 +9,12 @@
 </head>
 
 <body class="antialiased">
-    <div id="react-app">
-        <script src="{{ asset('js/app.js') }}"></script>
+    <div class='container'>
+        <div id="sample-button"></div>
+        <div id="band-form"></div>
     </div>
+    <script src="{{ asset('/js/app.js') }}">
+    </script>
 </body>
 
 </html>

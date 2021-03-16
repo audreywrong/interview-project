@@ -1914,6 +1914,8 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 __webpack_require__(/*! ./components/ButtonComponent */ "./resources/js/components/ButtonComponent.js");
 
+__webpack_require__(/*! ./components/BandForm */ "./resources/js/components/BandForm.js");
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -1957,6 +1959,16 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/components/BandForm.js":
+/*!*********************************************!*\
+  !*** ./resources/js/components/BandForm.js ***!
+  \*********************************************/
+/***/ (() => {
+
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: D:\\workspace\\interview-project\\resources\\js\\components\\BandForm.js: Support for the experimental syntax 'classProperties' isn't currently enabled (14:18):\n\n\u001b[0m \u001b[90m 12 |\u001b[39m     }\u001b[0m\n\u001b[0m \u001b[90m 13 |\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 14 |\u001b[39m     handleSubmit \u001b[33m=\u001b[39m (event) \u001b[33m=>\u001b[39m {\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 15 |\u001b[39m         event\u001b[33m.\u001b[39mpreventDefault()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 16 |\u001b[39m         \u001b[36mconst\u001b[39m data \u001b[33m=\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mstate\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 17 |\u001b[39m         console\u001b[33m.\u001b[39mlog(data)\u001b[33m;\u001b[39m\u001b[0m\n\nAdd @babel/plugin-proposal-class-properties (https://git.io/vb4SL) to the 'plugins' section of your Babel config to enable transformation.\nIf you want to leave it as-is, add @babel/plugin-syntax-class-properties (https://git.io/vb4yQ) to the 'plugins' section to enable parsing.\n    at Object._raise (D:\\workspace\\interview-project\\node_modules\\@babel\\parser\\lib\\index.js:775:17)\n    at Object.raiseWithData (D:\\workspace\\interview-project\\node_modules\\@babel\\parser\\lib\\index.js:768:17)\n    at Object.expectPlugin (D:\\workspace\\interview-project\\node_modules\\@babel\\parser\\lib\\index.js:9704:18)\n    at Object.parseClassProperty (D:\\workspace\\interview-project\\node_modules\\@babel\\parser\\lib\\index.js:13250:12)\n    at Object.pushClassProperty (D:\\workspace\\interview-project\\node_modules\\@babel\\parser\\lib\\index.js:13218:30)\n    at Object.parseClassMemberWithIsStatic (D:\\workspace\\interview-project\\node_modules\\@babel\\parser\\lib\\index.js:13131:14)\n    at Object.parseClassMember (D:\\workspace\\interview-project\\node_modules\\@babel\\parser\\lib\\index.js:13068:10)\n    at D:\\workspace\\interview-project\\node_modules\\@babel\\parser\\lib\\index.js:13013:14\n    at Object.withTopicForbiddingContext (D:\\workspace\\interview-project\\node_modules\\@babel\\parser\\lib\\index.js:12033:14)\n    at Object.parseClassBody (D:\\workspace\\interview-project\\node_modules\\@babel\\parser\\lib\\index.js:12990:10)");
 
 /***/ }),
 
@@ -2061,8 +2073,8 @@ function ButtonComponent() {
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ButtonComponent);
 
-if (document.getElementById("react-app")) {
-  react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(ButtonComponent, {}), document.getElementById("react-app"));
+if (document.getElementById("sample-button")) {
+  react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(ButtonComponent, {}), document.getElementById("sample-button"));
 }
 
 /***/ }),
