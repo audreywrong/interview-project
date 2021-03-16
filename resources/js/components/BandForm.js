@@ -1,22 +1,27 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { Button } from "react-bootstrap";
+// import { Button } from "react-bootstrap";
 
 class BandForm extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { bandname: "", track: "", image: "", soundclip: "" };
+        this.state = { bandName: "", single: "", image: "", audio: "" };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleChange(event) {
         this.setState({ [event.target.name]: event.target.value });
+        // console.log(event);
+        // console.log(event.target.name);
+        // console.log(event.target.value);
     }
 
     handleSubmit(event) {
-        const { bandName } = this.state;
         event.preventDefault();
+        const data = this.state;
+        console.log(data);
+        const bandName = this.state.bandName;
         alert(`You submit a band profile for: ${bandName}.`);
     }
 
@@ -29,6 +34,7 @@ class BandForm extends React.Component {
                         <input
                             name="bandName"
                             placeholder="Band Name"
+                            type="text"
                             value={this.state.bandName}
                             onChange={this.handleChange}
                         />
@@ -36,11 +42,12 @@ class BandForm extends React.Component {
                 </div>
                 <div>
                     <label>
-                        Favorite Track:
+                        Favorite Single:
                         <input
-                            name="track"
-                            placeholder="Favorite Track"
-                            value={this.state.track}
+                            name="single"
+                            type="text"
+                            placeholder="Favorite Single"
+                            value={this.state.single}
                             onChange={this.handleChange}
                         />
                     </label>
@@ -58,17 +65,17 @@ class BandForm extends React.Component {
                 </div>
                 <div>
                     <label>
-                        Sound Clip:
+                        Audio Clip:
                         <input
-                            name="soundClip"
-                            placeholder="Sound Clip"
-                            value={this.state.soundClip}
+                            name="audio"
+                            placeholder="Audio Clip"
+                            value={this.state.audio}
                             onChange={this.handleChange}
                         />
                     </label>
                 </div>
                 <div>
-                    <Button>Save Favorite Band Profile</Button>
+                    <button>Save Favorite Band Profile</button>
                 </div>
             </form>
         );
