@@ -10,7 +10,7 @@
 
 <body class="antialiased">
     <div class='container'>
-        <div id="sample-button"></div>
+        {{-- <div id="sample-button"></div> --}}
         <div id="band-form"></div>
     </div>
     <script src="{{ asset('/js/app.js') }}">

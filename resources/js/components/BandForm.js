@@ -1,53 +1,37 @@
-import React, { Component } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 import { Button } from "react-bootstrap";
 
-class BandForm extends Component {
+class BandForm extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            bandName: "",
-        };
+        this.state = { value: "" };
+
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleSubmit = (event) => {
-        event.preventDefault();
-        const data = this.state;
-        console.log(data);
-    };
+    handleChange(event) {
+        this.setState({ value: event.target.value });
+    }
 
-    handChange = (event) => {
-        event.preventDefaul();
-        // console.log(event);
-        // console.log(event.target.name);
-        // console.log(event.target.value);
-        this.setState({
-            [event.target.name]: event.target.value,
-        });
-    };
+    handleSubmit(event) {
+        event.preventDefault();
+    }
 
     render() {
-        const { bandName } = this.state;
         return (
-            <div>
-                <h1>Band Input Form</h1>
-                <form onSubmit={this.handleSubmit}>
-                    <label>
-                        Band name is: {bandName}
-                        <input
-                            type="text"
-                            placeholder="Band Name"
-                            name="bandName"
-                            onChange={this.handInputChange}
-                        />
-                    </label>
-                    <p>
-                        <Button>Submit Band</Button>
-                    </p>
-                </form>
-            </div>
+            <form onSubmit={this.handleSubmit}>
+                <label>
+                    Band Name:
+                    <input
+                        type="text"
+                        value={this.state.value}
+                        onChange={this.handleChange}
+                    />
+                </label>
+                <input type="submit" value="Submit" />
+            </form>
         );
     }
 }
