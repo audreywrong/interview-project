@@ -49,6 +49,7 @@ Route::any('/test', function (Request $request) {
 });
 
 Route::any('/push', [TestController::class, 'store']);
+
 Route::get('/fetch/tiles', [TileController::class, 'index']);
 Route::get('/fetch/tile/{id}', [TileController::class, 'show']);
 Route::post('/store/tile', [TileController::class, 'store']);

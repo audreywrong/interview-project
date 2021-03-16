@@ -27,16 +27,25 @@ class TileController extends Controller
      */
     public function store(Request $request)
     {
-        $id = Tile::insert([
-            'name' => request('name'),
-            'single' => request('single'),
-            'image' => request('image'),
-            'audio' => request('audio'),
-            'user_id' => 0,
-        ])->id();
+        $tile = new Tile;
+        $tile->name = request('name');
+        $tile->single = request('single');
+        $tile->image = request('image');
+        $tile->audio = request('audio');
+        $tile->user_id = 0;
+        $tile->save();
+
+        // TO DELETE, BUT SAVING TO REVIEW: Wanted to work at higher level of abstraction and use ORM for what it's made for. save() method is idiomatic.
+        // $id = Tile::insert([
+        //     'name' => request('name'),
+        //     'single' => request('single'),
+        //     'image' => request('image'),
+        //     'audio' => request('audio'),
+        //     'user_id' => 0,
+        // ])->id();
 
         return response()->json([
-            'data' => $id,
+            'data' => $tile,
         ]);
     }
 

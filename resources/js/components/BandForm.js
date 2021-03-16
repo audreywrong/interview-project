@@ -1,106 +1,85 @@
-import React from "react";
+import { event } from "jquery";
+import React, { useState } from "react";
 import ReactDOM from "react-dom";
 // import { Button } from "react-bootstrap";
 
-class BandForm extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = { name: "", single: "", image: "", audio: "" };
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-    }
+// Review this structure.
+const BandForm = () => {
+    const [inputName, setInputName] = useState("");
+    const [inputSingle, setInputSingle] = useState("");
+    const [inputImage, setInputImage] = useState(null);
+    const [inputAudio, setInputAudio] = useState(null);
 
-    handleChange(event) {
-        this.setState({ [event.target.name]: event.target.value });
-        // console.log(event);
-        // console.log(event.target.name);
-        // console.log(event.target.value);
-    }
-
-    handleSubmit(event) {
+    const handleSubmit = (event) => {
         event.preventDefault();
-        const data = this.state;
-        console.log(data);
-        const bandName = this.state.name;
-        alert(`You submit a band profile for: ${bandName}.`);
-    }
 
-    componentDidMount() {
         const url = "api/store/tile";
 
         axios
             .post(url, {
-                name: "",
-                single: "",
-                image: null,
-                audio: null,
+                name: inputName,
+                single: inputSingle,
+                image: inputImage,
+                audio: inputAudio,
             })
-            .then(function (response) {
+            .then((response) => {
                 console.log(response);
             });
-    }
+    };
 
-    render() {
-        return (
-            <form onSubmit={this.handleSubmit}>
-                <div>
-                    <label>
-                        Band Name:
-                        <input
-                            name="name"
-                            placeholder="Band Name"
-                            type="text"
-                            value={this.state.name}
-                            onChange={this.handleChange}
-                        />
-                    </label>
-                </div>
-                <div>
-                    <label>
-                        Favorite Single:
-                        <input
-                            name="single"
-                            type="text"
-                            placeholder="Favorite Single"
-                            value={this.state.single}
-                            onChange={this.handleChange}
-                        />
-                    </label>
-                </div>
-                <div>
-                    <label>
-                        Band Image:
-                        <input
-                            name="image"
-                            placeholder="Band Image"
-                            value={this.state.image}
-                            onChange={this.handleChange}
-                        />
-                    </label>
-                </div>
-                <div>
-                    <label>
-                        Audio Clip:
-                        <input
-                            name="audio"
-                            placeholder="Audio Clip"
-                            value={this.state.audio}
-                            onChange={this.handleChange}
-                        />
-                    </label>
-                </div>
-                <div>
-                    <button onClick={this.componentDidMount}>
-                        Save Favorite Band Profile
-                    </button>
-                </div>
-            </form>
-        );
-    }
-}
+    return (
+        <form onSubmit={handleSubmit}>
+            <div>
+                <label>
+                    Band Name:
+                    <input
+                        name="name"
+                        type="text"
+                        placeholder="Band Name"
+                        onChange={(event) => setInputName(event.target.value)}
+                    />
+                </label>
+            </div>
+            <div>
+                <label>
+                    Favorite Single:
+                    <input
+                        name="single"
+                        type="text"
+                        placeholder="Favorite Single"
+                        onChange={(event) => setInputSingle(event.target.value)}
+                    />
+                </label>
+            </div>
+            <div>
+                <label>
+                    Band Image:
+                    <input
+                        name="image"
+                        type="text"
+                        placeholder="Band Image URL"
+                        onChange={(event) => setInputImage(event.target.value)}
+                    />
+                </label>
+            </div>
+            <div>
+                <label>
+                    Audio Clip:
+                    <input
+                        name="audio"
+                        type="text"
+                        placeholder="Audio Clip URL"
+                        onChange={(event) => setInputAudio(event.target.value)}
+                    />
+                </label>
+            </div>
+            <div>
+                <button onClick={handleSubmit}>
+                    Save Favorite Band Profile
+                </button>
+            </div>
+        </form>
+    );
+};
 
-export default BandForm;
-
-if (document.getElementById("band-form")) {
-    ReactDOM.render(<BandForm />, document.getElementById("band-form"));
-}
+ReactDOM.render(<BandForm />, document.getElementById("band-form"));
