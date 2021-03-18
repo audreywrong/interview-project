@@ -1,0 +1,13 @@
+.profile {
+    display: flex;
+    flex-direction: row;
+    padding-top: 5;
+}
+
+.profile-pic-container {
+    padding-right: 5em;
+}
+
+.profile-pic {
+    border-radius: 50%;
+}
