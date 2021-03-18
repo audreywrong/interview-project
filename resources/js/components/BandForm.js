@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import ReactDOM from "react-dom";
 // import { Button } from "react-bootstrap";
 
-// Review this structure.
 const BandForm = () => {
     const [inputName, setInputName] = useState("");
     const [inputSingle, setInputSingle] = useState("");
@@ -21,10 +20,20 @@ const BandForm = () => {
                 single: inputSingle,
                 image: inputImage,
                 audio: inputAudio,
+                user_id: GUSER,
             })
             .then((response) => {
                 console.log(response);
             });
+    };
+
+    const handleReset = () => {
+        Array.from(document.querySelectorAll("input")).forEach(
+            (input) => (input.value = "")
+        );
+        this.setState({
+            itemvalues: [{}],
+        });
     };
 
     return (
@@ -74,7 +83,7 @@ const BandForm = () => {
                 </label>
             </div>
             <div>
-                <button onClick={handleSubmit}>
+                <button onClick={(handleSubmit, handleReset)}>
                     Save Favorite Band Profile
                 </button>
             </div>
