@@ -14,8 +14,11 @@ class TileController extends Controller
      */
     public function index()
     {
+        $tiles = Tile::select('tiles.*', 'users.username AS created_by')
+            ->join('users', 'users.id', '=', 'tiles.user_id')
+            ->get();
         return response()->json([
-            'data' => Tile::get(),
+            'data' => $tiles,
         ]);
     }
 
@@ -32,7 +35,7 @@ class TileController extends Controller
         $tile->single = request('single');
         $tile->image = request('image');
         $tile->audio = request('audio');
-        $tile->user_id = 0;
+        $tile->user_id = request('user_id');
         $tile->save();
 
         // TO DELETE, BUT SAVING TO REVIEW: Wanted to work at higher level of abstraction and use ORM for what it's made for. save() method is idiomatic.
