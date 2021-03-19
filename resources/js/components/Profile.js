@@ -2,21 +2,9 @@ import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import "../../css/app.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import axios from "axios";
 
 const Profile = () => {
-    const [username, setUsername] = useState(" ");
-
-    // const useEffect = () => {
-    //     const url = "http://127.0.0.1:8000/api/user";
-
-    //     axios.get(url).then(function (response) {
-    //         // handle success
-    //         let data = response.data;
-    //         console.log(data);
-    //         setUsername(data);
-    //     });
-    // };
+    const [username] = useState(GUSERNAME);
 
     return (
         <>
