@@ -7,6 +7,7 @@
     @auth
     <script>
         var GUSER = {{ Auth::user()->id }};
+        var GUSERNAME = {{ Auth::user()->username }};
     </script>
     @endauth
 
