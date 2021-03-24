@@ -91,4 +91,8 @@ const BandForm = () => {
     );
 };
 
-ReactDOM.render(<BandForm />, document.getElementById("band-form"));
+export default BandForm;
+
+if (document.getElementById("band-form")) {
+    ReactDOM.render(<BandForm />, document.getElementById("band-form"));
+}
