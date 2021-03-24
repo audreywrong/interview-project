@@ -26,6 +26,7 @@
     },
     "dependencies": {
         "@material-ui/core": "^4.11.3",
-        "react-bootstrap": "^1.5.2"
+        "react-bootstrap": "^1.5.2",
+        "react-vis": "^1.11.7"
     }
 }
