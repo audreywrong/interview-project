@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import "../../css/app.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { BandFormButton } from "../components/BandFormButton";
 
 const Profile = () => {
     const [username] = useState(GUSERNAME);
@@ -20,14 +21,14 @@ const Profile = () => {
                         <div>
                             <h1>Welcome {username}!</h1>
                         </div>
-                        <div className="d-flex">
-                            <div className="pr-5">
+                        <div className="profile-counters">
+                            <div className="profile-counter">
                                 <strong>6</strong> posts
                             </div>
-                            <div className="pr-5">
+                            <div className="profile-counter">
                                 <strong>2,465</strong> followers
                             </div>
-                            <div className="pr-5">
+                            <div className="profile-counter">
                                 <strong>212</strong> following
                             </div>
                         </div>
@@ -40,13 +41,13 @@ const Profile = () => {
                             meet a band I don't like! Always looking for new
                             music to check out.
                         </div>
-                        <div>
-                            <a href="#">could put a link to something here</a>
+                        <div className="band-form-button">
+                            <BandFormButton />
                         </div>
                     </div>
                 </div>
 
-                <div className="row">
+                <div className="band-tiles-row">
                     <div className="col-4">
                         <img
                             src="https://scontent-dfw5-1.cdninstagram.com/v/t51.2885-15/sh0.08/e35/c0.129.1034.1034a/s640x640/159113925_224405209391401_5023734514820725236_n.jpg?tp=1&_nc_ht=scontent-dfw5-1.cdninstagram.com&_nc_cat=101&_nc_ohc=ATuBXzXbXIwAX-nKTcL&oh=35d22c28e3855cc9f92e71f70c0feaf7&oe=60758DD9"

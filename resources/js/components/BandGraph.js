@@ -8,7 +8,7 @@ import {
     LineSeries,
 } from "react-vis";
 
-const BandGraph = () => {
+export const BandGraph = () => {
     // const GetBandData = () => {
     // //     const url = "api/fetch/tiles";
 

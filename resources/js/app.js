@@ -13,5 +13,4 @@ require("./bootstrap");
  */
 
 require("./components/Profile");
-require("./components/BandFormButton");
-require("./components/BandGraph");
+// require("./components/BandGraph");

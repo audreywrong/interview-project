@@ -24,9 +24,6 @@
             <div class="antialiased">
                 <div id="profile"></div>
             </div>
-            <div class="antialiased">
-                <div id="band-form-button"></div>
-            </div>
         </div>
     </div>
 

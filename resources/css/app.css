@@ -11,3 +11,17 @@
 .profile-pic {
     border-radius: 50%;
 }
+
+.profile-counters {
+    display: flex;
+}
+
+.profile-counter {
+    padding-right: 50;
+}
+
+.band-tiles-row {
+    display: flex;
+    flex-direction: row;
+    padding-top: 50;
+}

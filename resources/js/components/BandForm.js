@@ -1,9 +1,9 @@
-import { event } from "jquery";
+// import { event } from "jquery";
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 // import { Button } from "react-bootstrap";
 
-const BandForm = () => {
+export const BandForm = () => {
     const [inputName, setInputName] = useState("");
     const [inputSingle, setInputSingle] = useState("");
     const [inputImage, setInputImage] = useState(null);
@@ -91,8 +91,4 @@ const BandForm = () => {
     );
 };
 
-export default BandForm;
-
-if (document.getElementById("band-form")) {
-    ReactDOM.render(<BandForm />, document.getElementById("band-form"));
-}
+ReactDOM.render(<BandForm />, document.getElementById("bandform"));
