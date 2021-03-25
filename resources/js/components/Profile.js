@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import "../../css/app.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { BandFormButton } from "../components/BandFormButton";
+import BandFormButton from "../components/BandFormButton";
 
 const Profile = () => {
     const [username] = useState(GUSERNAME);

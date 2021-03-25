@@ -1,10 +1,8 @@
 import React, { useState } from "react";
-import ReactDOM from "react-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
 import { Button } from "react-bootstrap";
-import { BandForm } from "./BandForm";
+import BandForm from "./BandForm";
 
-export const BandFormButton = () => {
+const BandFormButton = () => {
     const [showForm, setShowForm] = useState(false);
     const [showButton, setShowButton] = useState(true);
 
@@ -21,7 +19,4 @@ export const BandFormButton = () => {
     );
 };
 
-ReactDOM.render(
-    <BandFormButton />,
-    document.getElementById("band-form-button")
-);
+export default BandFormButton;
